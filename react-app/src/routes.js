@@ -22,8 +22,8 @@ const routes = [
     {path: "/fakultas/detail/:fakultasid", Component: FakultasDetail},
     {path: "/prodi/detail/:prodiid", Component: ProdiDetail},
     //Create
-    {path: "/fakultas/create/:fakultasid", Component: FakultasCreate},
-    {path: "/prodi/create/:prodiid", Component: ProdiCreate},
+    {path: "/fakultas/create", Component: FakultasCreate},
+    {path: "/prodi/create", Component: ProdiCreate},
     //Update
     {path: "/fakultas/update/:fakultasid", Component: FakultasUpdate},
     {path: "/prodi/update/:prodiid", Component: ProdiUpdate},
