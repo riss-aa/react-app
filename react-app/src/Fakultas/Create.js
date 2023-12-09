@@ -1,6 +1,6 @@
 import { Axios } from "axios"
 import React, { useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 const Create = () => {
     const Navigate = useNavigate()
     const [fakultas, setFakultas] = useState({
@@ -11,10 +11,10 @@ const Create = () => {
         const value = e.target.value
         setFakultas({...fakultas,[name]: value})
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-            Axios.post("https://apimi5a.vercel.app/fakultas", fakultas)
+            await Axios.post("https://apimi5a.vercel.app/fakultas", fakultas)
             .then ((res) => {
                 alert('Fakultas berhasil disimpan') 
                 Navigate("/fakultas")
