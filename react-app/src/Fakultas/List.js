@@ -6,7 +6,7 @@ const List = () => {
     const [fakultas, setFakultas] = useState([])
     const [loading, setLoading] = useState(false)
     useEffect(() =>{
-        Axios.get("https://apimi5a.vercel.app/fakultas")
+        Axios.get('https://apimi5a.vercel.app/fakultas')
         .then((res) => {
             const {data} = res
             setFakultas(data)
@@ -19,7 +19,14 @@ const List = () => {
     
     })
 const handleDelete = async (id, nama) => {
-    
+    if(window.confirm('yakin mau hapus fakultas : ${nama} ?')){
+        try{
+            await Axios.delete('https://apimi5a.vercel.app/fakultas/${id}')
+            .then(window.location.reload())
+        } catch(error){
+            alert("Error: ", error)
+        }
+    }
 }
     return(
     <>
